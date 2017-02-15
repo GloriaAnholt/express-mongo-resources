@@ -1,7 +1,6 @@
 /** Created by Gloria Anholt on 11/3/16. **/
 
-const chai = require('chai');
-const assert = chai.assert;
+const assert = require('chai').assert;
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
@@ -21,7 +20,7 @@ describe('the routes and models of breweries', () => {
     function setupBeer() {
       const name = 'beers';
       connection.db
-        .listCollections({name})
+        .listCollections({ name })
         .next((err, collInfo) => {
           if (!collInfo) return done();
           connection.db.dropCollection(name, done);
@@ -59,7 +58,6 @@ describe('the routes and models of breweries', () => {
       "bestBeer": "Workhorse IPA",
       "visited": true
     };
-
     const Deschutes = {
       "name": "Deschutes",
       "phone": 5038675309,
